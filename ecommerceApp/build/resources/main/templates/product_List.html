@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Product List</title>
+    <style>
+       table, td{
+       border: 1px solid black;
+
+       }
+       table{
+       width: 20%;
+       }
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+<div>
+    <h2> Product List</h2>
+<!--    <a th:href="@{/ProductAddPage}"></a>-->
+    <select name="MassDeleteAction" id="MassDeleteAction">
+        <option value="MassDeleteAction">Delete</option>
+    </select>
+
+    <input type="submit" value="Apply">
+    <hr/>
+    <form>
+        <div>
+            <table border=1>
+                <tr th:each="product : ${listProduct}">
+
+                    <td><input type="checkbox"></td>
+
+<!--                <tr>-->
+<!--                    <td th:text="${product.sku}" height="50"></td>-->
+<!--                </tr>-->
+
+
+                <tr>
+                    <td th:text="${product.Name}" height="50"></td>
+                </tr>
+
+
+                <tr>
+                    <td th:text="${product.Price}" height="50"></td>
+                </tr>
+                <tr>
+                    <td th:text="${product.ProductType}" height="50"></td>
+                </tr>
+                </tr>
+
+            </table>
+        </div>
+    </form>
+</div>
+</body>
+</html>
